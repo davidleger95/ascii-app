@@ -26,6 +26,7 @@ class CharInput extends Component {
     return (<span data-root={this.constructor.displayName}>
       {label && <label htmlFor={name}>{label}</label>}
       <input
+        id={name}
         name={name}
         type="text"
         value={value || this.state.value}
