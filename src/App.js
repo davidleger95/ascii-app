@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './main.css';
 import CharInput from './components/CharInput'
+import CharCode from './components/CharCode'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +13,19 @@ class App extends Component {
     window.onkeypress = ({ charCode, key }) => {
       this.setState({ charCode: charCode, key })
     }
+    let spinner;
+    setInterval((i) => {
+      switch (this.state.spinner) {
+        case '—': spinner = '\\'
+          break;
+        case '\\': spinner = '/'
+          break;
+        default:
+          spinner = '—'
+      }
+
+      this.setState({ spinner })
+    }, 250)
   }
 
   componentWillUnount() {
@@ -20,23 +33,15 @@ class App extends Component {
   }
 
   render() {
-    const { charCode, key} = this.state
+    const { charCode, key, spinner} = this.state
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-spinner">{spinner}</h1>
           <CharInput name="char-input" label="Character Code For" value={key} onChange={this.onChange} />
+          <p><em>Press a key to get it's Unicode value.</em></p>
         </div>
-        {charCode ?
-          <p className="charCode">
-            0{charCode.toString(2)}<sub>{2}</sub><br />
-            {charCode.toString(4)}<sub>{4}</sub><br />
-            {charCode.toString(8)}<sub>{8}</sub><br />
-            {charCode.toString(10)}<sub>{10}</sub><br />
-            {charCode.toString(16)}<sub>{16}</sub><br />
-          </p> :
-          <p>Press a key to get it's Unicode value.</p>
-        }
+        <CharCode value={charCode} />
       </div>
     );
   }
