@@ -1,0 +1,31 @@
+[data-root='CharInput'] {
+  display: block;
+  margin: 1em 0;
+
+  label, input {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+  }
+
+  label {
+    opacity: 0.5;
+  }
+
+  input {
+    background: none;
+    border: none;
+    border-bottom: 0.1em solid rgba(#fff, 0.5);
+    width: 1.2em;
+    padding: 0;
+    margin-left: 0.25em;
+    font-family: 'Monaco' monospace;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+      background: rgba(white, 0.1);
+      border-bottom: 0.1em solid #fff;
+    }
+  }
+}

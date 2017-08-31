@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
-import './App.css'
-
+import './main.css';
+import CharInput from './components/CharInput'
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      key: '_',
-      radix: 16
-    }
+    this.state = {}
   }
 
   componentWillMount() {
-
     window.onkeypress = ({ charCode, key }) => {
       this.setState({ charCode: charCode, key })
     }
@@ -23,22 +19,22 @@ class App extends Component {
     window.onkeypress = undefined
   }
 
-  toggleRadix = () => {
-    const radix = this.state.radix === 10 ? 16 : 10
-    this.setState({ radix })
-  }
-
   render() {
-    const { charCode, key, radix} = this.state
+    const { charCode, key} = this.state
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1>Unicode for '{key}':</h1>
+          <CharInput name="char-input" label="Character Code For" value={key} onChange={this.onChange} />
         </div>
-        <button onClick={this.toggleRadix}>Use base {radix === 10 ? 16 : 10}</button>
         {charCode ?
-          <p className="charCode">{charCode.toString(radix)}<sub>{radix}</sub></p> :
+          <p className="charCode">
+            0{charCode.toString(2)}<sub>{2}</sub><br />
+            {charCode.toString(4)}<sub>{4}</sub><br />
+            {charCode.toString(8)}<sub>{8}</sub><br />
+            {charCode.toString(10)}<sub>{10}</sub><br />
+            {charCode.toString(16)}<sub>{16}</sub><br />
+          </p> :
           <p>Press a key to get it's Unicode value.</p>
         }
       </div>
