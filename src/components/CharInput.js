@@ -29,7 +29,7 @@ class CharInput extends Component {
         id={name}
         name={name}
         type="text"
-        value={value || this.state.value}
+        value={value}
         onChange={onChange || this.onChange}
         ref={(input) => this.input = input}
         {...rest}

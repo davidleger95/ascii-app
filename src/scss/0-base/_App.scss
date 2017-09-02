@@ -1,5 +1,9 @@
 .App {
+  box-sizing: border-box;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .App-header {
@@ -9,5 +13,10 @@
 }
 
 .App-spinner {
-  font-family: monospace;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.App-body {
+  flex: 1;
 }

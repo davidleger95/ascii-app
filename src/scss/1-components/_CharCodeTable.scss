@@ -1,22 +1,31 @@
 [data-root='CharCodeTable'] {
   margin: 1em auto;
-  //border-collapse: collapse;
-  border-spacing: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
 
-  th {
-    border-bottom: 1px solid rgba(#000, 0.1);
-    padding: 0.5em 0;
+  .radix-item {
+    flex-grow: 1;
+    min-width: 200px;
   }
 
-  td {
-    font-family: monospace;
-    min-width: 100px;
-    padding: 0.25em 0;
-    font-size: 3em;
+  dt {
+    padding: 0.5em 0;
+    font-weight: bold;
+    color: rgba(#000, 0.5);
+  }
+
+  dd {
+    min-width: 240px;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(#000, 0.1);
+    font-size: 2em;
+    margin: 0;
+    text-transform: uppercase;
   }
 
   sub {
-    font-size: 0.4em;
+    font-size: 0.5em;
     opacity: 0.5;
     font-weight: bold;
   }

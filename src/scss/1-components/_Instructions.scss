@@ -1,0 +1,31 @@
+[data-root='Instructions'] {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  text-align: left;
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 1em 1em 2em 1em;
+  }
+
+  ol {
+    padding: 0;
+    margin-left: 1em;
+  }
+
+  li {
+    margin: 0.5em 0;
+    padding: 0;
+  }
+
+  code {
+    background-color: rgba(#F00, 0.05);
+    padding: 0.1em 0.25em;
+    border: 1px solid rgba(#F00, 0.2);
+    border-radius: 0.25em;
+  }
+}
