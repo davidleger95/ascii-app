@@ -1,6 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './main.css'
+import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+document.title = 'ASCII App'
+ReactDOM.render(<App />, document.getElementById('root'))

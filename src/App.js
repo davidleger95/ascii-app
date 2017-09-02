@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './main.css';
 import CharInput from './components/CharInput'
 import CharCode from './components/CharCode'
 class App extends Component {
