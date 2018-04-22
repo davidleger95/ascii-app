@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import toRadix from '../utils/toRadix'
-import leftPad from '../utils/leftPad'
+import React from 'react';
+import PropTypes from 'prop-types';
+import toRadix from '../utils/toRadix';
+import leftPad from '../utils/leftPad';
 
 const RADICES = [
   {
@@ -16,11 +16,11 @@ const RADICES = [
     padding: 2
   }
 ];
-const displayName = 'CharCodeTable'
-CharCode.displayName = displayName
+const displayName = 'CharCodeTable';
+CharCode.displayName = displayName;
 CharCode.propTypes = {
   value: PropTypes.number.isRequired
-}
+};
 
 export default function CharCode({ value, ...rest }) {
   return (
@@ -32,5 +32,5 @@ export default function CharCode({ value, ...rest }) {
         </span>
       ))}
     </dl>
-  )
+  );
 }
